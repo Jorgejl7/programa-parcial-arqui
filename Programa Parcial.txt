@@ -1,0 +1,332 @@
+void setup() {
+  // preparando la intefaz serial
+  Serial.begin(9600);
+ 
+  // impresion de etiqueta
+  Serial.println(F(" ------------------------------------------------------------------ "));
+  Serial.println(F("|            Programa Hecho por el Ingeniero Jorge Lopez           |"));
+  Serial.println(F(" ------------------------------------------------------------------ "));
+}
+ 
+
+void loop() {
+  if(Serial.available() > 0){
+    int n = Serial.parseInt();
+  imprimir(n);
+  delay(2500);
+  }
+}
+//metodos de enceder display en forma de numero entero
+void cero(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+}
+
+void uno(){
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    delay(2500);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+}
+
+void dos(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(8, LOW);
+}
+
+void tres(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(8, LOW);
+}
+
+void cuatro(){
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void cinco(){
+    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void seis(){
+    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void siete(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+}
+
+void ocho(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void nueve(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void diez(){
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void once(){
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void doce(){
+    digitalWrite(2, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    
+}
+
+void trece(){
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(8, LOW);
+}
+
+void catorce(){
+    digitalWrite(2, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+
+void quince(){
+    digitalWrite(2, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(8, HIGH);
+    delay(2500);
+    digitalWrite(2, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+}
+//metodo para imprimir numero entero en monitor serial
+void imprimir(int input){
+  if (true){
+    
+    if (input==0){
+      Serial.println(F("El numero impreso es el 0"));
+      cero();
+    }
+    
+    if (input==1){
+      Serial.println(F("El numero impreso es el 1"));
+      uno();
+    }
+ 
+    if (input==2){
+      Serial.println(F("El numero impreso es el 2"));
+      dos();
+    }
+
+    if (input==3){
+      Serial.println(F("El numero impreso es el 3"));
+      tres();
+    }
+
+    if (input==4){
+      Serial.println(F("El numero impreso es el 4"));
+      cuatro();
+    }
+
+    if (input==5){
+      Serial.println(F("El numero impreso es el 5"));
+      cinco();
+    }
+
+    if (input==6){
+      Serial.println(F("El numero impreso es el 6"));
+      seis();
+    }
+
+    if (input==7){
+      Serial.println(F("El numero impreso es el 7"));
+      siete();
+    }
+
+    if (input==8){
+      Serial.println(F("El numero impreso es el 8"));
+      ocho();
+    }
+
+    if (input==9){
+      Serial.println(F("El numero impreso es el 9"));
+      nueve();
+    }
+    if (input == 10){
+      Serial.println(F("El numero impreso es el 10"));
+      diez();
+      
+    }
+    if (input == 11){
+      Serial.println(F("El numero impreso es el 11"));
+      once();
+      
+    }
+    if (input == 12){
+      Serial.println(F("El numero impreso es el 12"));
+      doce();
+      
+    }
+    if (input == 13){
+      Serial.println(F("El numero impreso es el 13"));
+      trece();
+      
+    }
+    if (input == 14){
+      Serial.println(F("El numero impreso es el 14"));
+      catorce();
+      
+    }
+    if (input == 15){
+      Serial.println(F("El numero impreso es el 15"));
+      quince();
+      
+    }
+    if (input > 15){
+      Serial.println(F("El numero impreso es mayor a 15"));
+      ocho();
+      delay(250);
+      ocho();
+      delay(250);
+      
+    }
+}
+}
